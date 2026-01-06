@@ -1,2 +1,2 @@
 # kodedeops-apps-enroller
-application enrroller repo
+application enroller repo wich will create namespace, network policies, resource quotas, etc.
