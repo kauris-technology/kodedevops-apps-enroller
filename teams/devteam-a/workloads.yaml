@@ -1,3 +1,26 @@
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: guestbook
+#   namespace: 'argocd'
+#   finalizers:
+#   - resources-finalizer.argocd.argoproj.io
+# spec:
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: 'devteam-a'
+#   project: devteam-a
+#   source:
+#     path: kustomize-guestbook
+#     repoURL: https://github.com/argoproj/argocd-example-apps
+#   syncPolicy:
+#     automated: {}
+#     syncOptions:
+#       - Validate=false
+#       - PrunePropagationPolicy=foreground
+#       - PruneLast=true
+#       - FailOnSharedResource=true
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -7,16 +30,14 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    server: https://kubernetes.default.svc
+    server: https://kubernetes.default.svc111111
     namespace: 'devteam-a'
   project: devteam-a
   source:
     path: kustomize-guestbook
     repoURL: https://github.com/argoproj/argocd-example-apps
+    targetRevision: main
   syncPolicy:
     automated: {}
     syncOptions:
-      - Validate=false
-      - PrunePropagationPolicy=foreground
-      - PruneLast=true
-      - FailOnSharedResource=true
+    - CreateNamespace=true

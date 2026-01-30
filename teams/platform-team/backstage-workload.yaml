@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backstage-workload
+  namespace: 'argocd'
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: 'plateformteam'
+  project: plateformteam
+  source:
+    path: argocd
+    repoURL: 'https://github.com/kauris-technology/kodedevops-backstage'
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - Validate=false
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true
+      - FailOnSharedResource=true
