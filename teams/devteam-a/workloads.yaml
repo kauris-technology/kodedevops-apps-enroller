@@ -30,7 +30,7 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    server: https://kubernetes.default.svc111111
+    server: https://kubernetes.default.svc
     namespace: 'devteam-a'
   project: devteam-a
   source:
