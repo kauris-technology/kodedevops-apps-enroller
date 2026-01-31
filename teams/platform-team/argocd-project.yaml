@@ -22,7 +22,7 @@ spec:
   # Restrict Namespace cluster-scoped resources from being created
   clusterResourceBlacklist:
     - group: '*'
-      kind: '*'
+      kind: 'CustomResourceDefinition'
 
   # Restrict namespaced-scoped resources from being created
   namespaceResourceBlacklist:
