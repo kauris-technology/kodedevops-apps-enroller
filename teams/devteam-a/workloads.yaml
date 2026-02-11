@@ -36,7 +36,7 @@ spec:
   source:
     path: kustomize-guestbook
     repoURL: https://github.com/argoproj/argocd-example-apps
-    targetRevision: f5989ed981ca426fb46fca1e93e23a13eb8e62d6
+    targetRevision: master
   syncPolicy:
     automated: {}
     syncOptions:
